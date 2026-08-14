@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-primary: #516051;
+  --color-primary-container: #6a7869;
+  --color-primary-fixed: #d7e7d4;
+  --color-primary-fixed-dim: #bbcbb9;
+  --color-on-primary-fixed: #121e13;
+  --color-on-primary-fixed-variant: #3c4a3d;
+  
+  --color-surface: #fafaf4;
+  --color-surface-dim: #dadad5;
+  --color-surface-container: #eeeee9;
+  --color-surface-container-high: #e8e8e3;
+  --color-surface-container-highest: #e3e3de;
+  --color-surface-container-low: #f4f4ef;
+  --color-surface-container-lowest: #ffffff;
+  
+  --color-on-surface: #1a1c19;
+  --color-on-surface-variant: #434842;
+  --color-outline: #747872;
+  --color-outline-variant: #e3e3de;
+  
+  --color-tertiary: #5c5d54;
+  --color-secondary: #5f5e5e;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fafaf4;
+  color: #1a1c19;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom subtle shadows */
+.shadow-subtle {
+  box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.04);
+}
+
+.shadow-card-hover {
+  box-shadow: 0px 8px 30px rgba(26, 26, 26, 0.07);
+}
+
+/* Animated sparklines */
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sparkline {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawLine 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3D Standing Rotating Animation for Growvia Emblem */
+@keyframes rotate3d-standing {
+  0% {
+    transform: rotateX(6deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(6deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotateX(6deg) rotateY(360deg);
+  }
+}
+
+@keyframes shadow-breathe-3d {
+  0%, 100% {
+    transform: rotateX(75deg) scaleX(1) scaleY(1);
+    opacity: 0.28;
+  }
+  25%, 75% {
+    transform: rotateX(75deg) scaleX(0.4) scaleY(1.2);
+    opacity: 0.14;
+  }
+  50% {
+    transform: rotateX(75deg) scaleX(0.9) scaleY(0.9);
+    opacity: 0.25;
+  }
+}
+
+.animate-3d-standing {
+  transform-style: preserve-3d;
+  animation: rotate3d-standing 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-3d-shadow {
+  transform-style: preserve-3d;
+  animation: shadow-breathe-3d 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* Hide scrollbar on pill filters */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Growvia - Digital Growth Network",
+  "description": "Intelligent B2B2C digital growth and opportunity matching network connecting customers and businesses for discovery, collaboration, growth experiments, and measurable outcomes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
